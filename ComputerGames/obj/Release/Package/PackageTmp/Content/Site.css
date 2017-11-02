@@ -1,0 +1,86 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #1B1B1B;
+    background-image: url(/Img/fractured_but_whole_3840x2160.jpg);
+    background-size: cover;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.table {
+    background-color: #1B1B1B;
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+}
+
+.table-header {
+    background-color: #1B1B1B;
+    color: #fff;
+    font-size: 10px;
+}
+
+.btn-default {
+    background-color: #1B1B1B;
+    color: #fff;
+}
+
+.details {
+    padding: 20px;
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+}
+
+.name {
+    text-align: center;
+    font-size: 16px;
+}
+
+.heading {
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    font-family: 'Russo One', sans-serif;
+}
+
+.heading-container {
+    padding: 10px 0;
+    background: #1B1B1B;
+    color: #fff;
+}
+
+.container-front{
+    color: #fff;
+    font-size: 100px;
+    text-align: center;
+    font-family: 'Russo One', sans-serif;
+}
+
+.click-above{
+    color: red;
+}
+
+.search {
+    font-weight: 800;
+    font-size: 14px;
+}

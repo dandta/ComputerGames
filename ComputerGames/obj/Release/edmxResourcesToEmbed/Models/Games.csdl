@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ComputerGamesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CompGame">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GameTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Genre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AgeRating" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReleaseDate" Type="DateTime" Precision="7" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Preview" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Likes" Type="Int32" />
+    <Property Name="Dislikes" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="ComputerGamesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CompGames" EntityType="Self.CompGame" />
+  </EntityContainer>
+</Schema>

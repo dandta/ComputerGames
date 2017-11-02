@@ -1,0 +1,112 @@
+﻿@model IEnumerable<ComputerGames.Models.CompGame>
+
+@{
+    ViewBag.Title = "Computer Games";
+}
+
+<div class="container heading-container">
+    <div class="heading">Computer Games Database</div>
+</div>
+
+<hr />
+
+@Html.ActionLink("Add new game", "Create", null, new { @class = "btn btn-default" })
+<br />
+<br />
+
+@using (Html.BeginForm())
+{
+    <p class="search">
+        Team: @Html.DropDownList("gameGenre", "All")
+        Name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" class="btn btn-default" />
+    </p>
+}
+<hr />
+
+<table class="table">
+    <tr>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Picture)
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.GameTitle)
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Platform)
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        @*<th class="text-center">
+            @Html.DisplayNameFor(model => model.AgeRating)
+        </th>*@
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        @*<th class="text-center">
+            @Html.DisplayNameFor(model => model.Preview)
+        </th>*@
+        <th class="text-center">
+            Good or Bad
+        </th>
+        <th class="text-center">
+            Rating
+        </th>
+        <th class="text-center">
+            Actions
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="text-center">
+            <img src="@Url.Content(item.Picture)" alt="no pic" height="100" style="border: solid; border-width:thin"/>
+        </td>
+        <td class="text-center" style="vertical-align:middle">
+            @Html.DisplayFor(modelItem => item.GameTitle)
+        </td>
+        <td class="text-center" style="vertical-align:middle">
+            @Html.DisplayFor(modelItem => item.Platform)
+        </td>
+        <td class="text-center" style="vertical-align:middle">
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        @*<td class="text-center" style="vertical-align:middle">
+            @Html.DisplayFor(modelItem => item.AgeRating)
+        </td>*@
+        <td class="text-center" style="vertical-align:middle">
+            @Html.DisplayFor(modelItem => item.ReleaseDate)
+        </td>
+        <td class="text-center" style="vertical-align:middle">
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        @*<td class="text-center" style="vertical-align:middle">
+            @Html.DisplayFor(modelItem => item.Preview)
+        </td>*@
+        <td class="text-center" style="vertical-align:middle">
+            <i class="icon-thumbs-up "></i>
+            @Html.DisplayFor(modelItem => item.Likes)
+            <span style="padding: 0 10px;"></span>
+            <i class="icon-thumbs-down"></i>
+            @Html.DisplayFor(modelItem => item.Dislikes)
+        </td>
+        <td class="text-center" style="vertical-align:middle">
+            <ul class="list-inline">
+                @Html.ActionLink("Good", "Likes", new { item.Id }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Bad", "Dislikes", new { item.Id }, new { @class = "btn btn-danger" })
+            </ul>
+        </td>
+        <td class="text-center" style="vertical-align:middle">
+            <ul class="list-inline">
+                @Html.ActionLink("Details", "Details", new { item.Id }, new { @class = "btn btn-default" })
+                @Html.ActionLink("Edit", "Edit", new { item.Id }, new { @class = "btn btn-default" })
+                @Html.ActionLink("Delete", "Delete", new { item.Id }, new { @class = "btn btn-default" })
+            </ul>
+        </td>
+    </tr>
+}
+</table>

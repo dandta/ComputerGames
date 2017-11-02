@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ComputerGamesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CompGames">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GameTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Platform" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Genre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AgeRating" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReleaseDate" Type="datetime2" Precision="7" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Picture" Type="nvarchar(max)" />
+    <Property Name="Preview" Type="nvarchar(max)" />
+    <Property Name="Likes" Type="int" />
+    <Property Name="Dislikes" Type="int" />
+  </EntityType>
+  <EntityContainer Name="ComputerGamesModelStoreContainer">
+    <EntitySet Name="CompGames" EntityType="Self.CompGames" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

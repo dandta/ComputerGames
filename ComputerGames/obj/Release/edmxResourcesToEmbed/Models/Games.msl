@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ComputerGamesModelStoreContainer" CdmEntityContainer="ComputerGamesEntities">
+    <EntitySetMapping Name="CompGames">
+      <EntityTypeMapping TypeName="ComputerGamesModel.CompGame">
+        <MappingFragment StoreEntitySet="CompGames">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GameTitle" ColumnName="GameTitle" />
+          <ScalarProperty Name="Platform" ColumnName="Platform" />
+          <ScalarProperty Name="Genre" ColumnName="Genre" />
+          <ScalarProperty Name="AgeRating" ColumnName="AgeRating" />
+          <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="Preview" ColumnName="Preview" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Dislikes" ColumnName="Dislikes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
